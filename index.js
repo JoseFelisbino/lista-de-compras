@@ -25,7 +25,15 @@ adicionarItem.addEventListener("click", (evento) => {
     containerIntemLista.appendChild(nomeItem);
 
     intemLista.appendChild(containerIntemLista);
-    listaDeCompras.appendChild(intemLista)
+    listaDeCompras.appendChild(intemLista);
+
+    const diaDaSemana = new Date().toLocaleDateString("pt-BR", {
+        weekday: "long"
+    });
+
+    const data = new Date().toLocaleDateString("pt-BR")
+
+    const dataCompleta = `${diaDaSemana} (${data})`;
 
 
 });
