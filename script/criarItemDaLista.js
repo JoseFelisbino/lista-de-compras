@@ -1,7 +1,7 @@
 const input = document.getElementById('input-item');
+let contador = 0;
 
 export function containerIntemLista() {
-    evento.preventDefault();
 
     if (input.value === "") {
         alert("Por favor insira uma tarefa");
