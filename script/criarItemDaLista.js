@@ -1,7 +1,9 @@
+import gerarDiaDaSemana from "./gerarDiaDaSemana.js";
+
 const input = document.getElementById('input-item');
 let contador = 0;
 
-export function containerIntemLista() {
+export function criarItemDaLista() {
 
     if (input.value === "") {
         alert("Por favor insira uma tarefa");
@@ -27,21 +29,11 @@ export function containerIntemLista() {
 
     containerIntemLista.appendChild(inputCheckbox);
     containerIntemLista.appendChild(nomeItem);
-
     intemLista.appendChild(containerIntemLista);
 
-    const diaDaSemana = new Date().toLocaleDateString("pt-BR", {
-        weekday: "long"
-    });
 
-    const data = new Date().toLocaleDateString("pt-BR");
-    const hora = new Date().toLocaleTimeString("pt-BR", {
-        hour: "numeric",
-        minute: "numeric"
-    });
-
-    const dataCompleta = `${diaDaSemana} (${data}) às ${hora}`;
     const itemData = document.createElement("p");
+    const dataCompleta = gerarDiaDaSemana();
     itemData.innerText = dataCompleta
     itemData.classList.add("texto-data")
 
