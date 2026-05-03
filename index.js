@@ -21,6 +21,14 @@ adicionarItem.addEventListener("click", (evento) => {
     const nomeItem = document.createElement("p");
     nomeItem.innerText = input.value;
 
+    inputCheckbox.addEventListener("click", function (){
+        if (inputCheckbox.checked) {
+            nomeItem.style.textDecoration = "line-through";
+        } else {
+            nomeItem.style.textDecoration = "none";
+        }
+    });
+
     containerIntemLista.appendChild(inputCheckbox);
     containerIntemLista.appendChild(nomeItem);
 
@@ -40,7 +48,7 @@ adicionarItem.addEventListener("click", (evento) => {
     const itemData = document.createElement("p");
     itemData.innerText = dataCompleta
     itemData.classList.add("texto-data")
-    
+
     intemLista.appendChild(itemData);
 
     listaDeCompras.appendChild(intemLista);
